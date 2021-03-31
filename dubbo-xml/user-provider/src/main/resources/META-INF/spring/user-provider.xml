@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+    <!--提供方应用信息，用于计算依赖关系-->
+    <dubbo:application name="user-service" />
+<!--    服务注册中心的地址，N/A表示不注册-->
+    <dubbo:registry address="N/A" />
+<!--    通信协议的类型，默认为Dubbo协议，20880为暴露的端口号-->
+    <dubbo:protocol name="dubbo" port="20880" />
+<!--    描述需要发布的服务接口的地址，interface表示定义的接口，ref引用该接口实现的bean名称-->
+    <dubbo:service interface="IUserService" ref="userService" />
+
+    <bean id="userService" class="UserServiceImpl" />
+</beans>
