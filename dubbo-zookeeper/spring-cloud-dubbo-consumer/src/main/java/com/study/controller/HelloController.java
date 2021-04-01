@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class HelloController {
 
 	//@Reference注解获取远程代理对象
-	@Reference
+	@Reference(mock = "com.study.service.MockHelloService", loadbalance = "roundrobin")
 	private IHelloService helloService;
 
 	@GetMapping("say")

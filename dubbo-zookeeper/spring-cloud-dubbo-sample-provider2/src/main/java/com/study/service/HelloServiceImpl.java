@@ -11,6 +11,6 @@ public class HelloServiceImpl implements IHelloService{
     private String serviceName;
 
     public String sayHello(String name) {
-        return String.format("[%s]: Hello, %s", serviceName, name);
+        return String.format("[%s]: Hello2, %s", serviceName, name);
     }
 }
