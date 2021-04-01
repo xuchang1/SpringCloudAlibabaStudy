@@ -13,6 +13,7 @@
         <module>dubbo-springboot</module>
         <module>dubbo-zookeeper</module>
         <module>nacos-service</module>
+        <module>spring-cloud-nacos-config-sample</module>
     </modules>
 
 
