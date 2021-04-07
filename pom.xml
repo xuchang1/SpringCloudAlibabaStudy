@@ -16,6 +16,7 @@
         <module>spring-cloud-nacos-config-sample</module>
         <module>sentinel-demo</module>
         <module>spring-cloud-sentinel</module>
+        <module>spring-cloud-dubbo-sentinel</module>
     </modules>
 
 
