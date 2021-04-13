@@ -1,0 +1,20 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+#        - predicates:
+#            - Path=/gateway/** #路径配置
+#          filters:
+#            - StripPrefix=1 #跳过前缀
+#          uri: http://localhost:8080/say #路由的访问地址
+        - predicates:
+            - Path=/gateway/**
+          id: requestratelimiter_route
+          uri: http://localhost:8080/say
+          filters:
+            - name: RequestRateLimiter
+              args:
+                redis-rate-limiter.replenishRate: 1
+                redis-rate-limiter.burstCapacity: 2
+server:
+  port: 8088

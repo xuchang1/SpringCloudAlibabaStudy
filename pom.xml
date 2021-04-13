@@ -17,6 +17,7 @@
         <module>sentinel-demo</module>
         <module>spring-cloud-sentinel</module>
         <module>spring-cloud-dubbo-sentinel</module>
+        <module>spring-cloud-gateway</module>
     </modules>
 
 
