@@ -14,7 +14,14 @@ spring:
           filters:
             - name: RequestRateLimiter
               args:
+                denyEmptyKey: true
+                emptyKeyStatus: SERVICE_UNAVAILABLE
+                keyResolver: '#{@ipAddressKeyResolver}'
                 redis-rate-limiter.replenishRate: 1
                 redis-rate-limiter.burstCapacity: 2
+            - StripPrefix=1
+  redis:
+    host: localhost
+    port: 6379
 server:
   port: 8088
