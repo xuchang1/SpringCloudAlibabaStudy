@@ -10,6 +10,18 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>spring-cloud-gateway-nacos-consumer</artifactId>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>8</source>
+                    <target>8</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
     <dependencies>
         <dependency>
@@ -34,6 +46,21 @@
                     <artifactId>httpclient</artifactId>
                 </exclusion>
             </exclusions>
+        </dependency>
+
+<!--        集成sentinel限流-->
+        <dependency>
+            <groupId>com.alibaba.csp</groupId>
+            <artifactId>sentinel-spring-cloud-gateway-adapter</artifactId>
+            <version>1.7.1</version>
+        </dependency>
+
+<!--        sentinel dashboard-->
+<!--        集成时，vm启动参数配置 -Dcsp.sentinel.dashboard.server=127.0.0.1:8081 -Dproject.name=spring-cloud-nacos-gateway-consumer -Dcsp.sentinel.app.type=1-->
+        <dependency>
+            <groupId>com.alibaba.csp</groupId>
+            <artifactId>sentinel-transport-simple-http</artifactId>
+            <version>1.7.1</version>
         </dependency>
     </dependencies>
 </project>

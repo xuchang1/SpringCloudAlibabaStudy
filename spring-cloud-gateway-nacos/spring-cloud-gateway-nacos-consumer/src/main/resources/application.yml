@@ -17,5 +17,17 @@ spring:
             - Path=/nacos/**
           filters:
             - StripPrefix=1
+        - id: foo_route
+          uri: http://localhost:8080/say
+          predicates:
+            - Path=/foo/**
+          filters:
+            - StripPrefix=1
+        - id: baz_route
+          uri: http://localhost:8080/say
+          predicates:
+            - Path=/baz/**
+          filters:
+            - StripPrefix=1
 server:
   port: 8888
