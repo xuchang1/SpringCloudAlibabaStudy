@@ -19,6 +19,7 @@
         <module>spring-cloud-dubbo-sentinel</module>
         <module>spring-cloud-gateway</module>
         <module>spring-cloud-gateway-nacos</module>
+        <module>source-code</module>
     </modules>
 
 
