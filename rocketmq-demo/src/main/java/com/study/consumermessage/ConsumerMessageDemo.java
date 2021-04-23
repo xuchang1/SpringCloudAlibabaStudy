@@ -27,10 +27,10 @@ public class ConsumerMessageDemo {
 		consumer.setNamesrvAddr(nameServerAddr);
 
 		// 订阅一个或者多个Topic，以及Tag来过滤需要消费的消息
-//		consumer.subscribe("TopicTest", "*");
+		consumer.subscribe("TopicTest", "*");
 
 		//基于sql筛选消息
-		consumer.subscribe("TopicTest", MessageSelector.bySql("a between 0 and 3"));
+//		consumer.subscribe("TopicTest", MessageSelector.bySql("a between 0 and 3"));
 
 		// 注册回调实现类来处理从broker拉取回来的消息
 		consumer.registerMessageListener((MessageListenerConcurrently) (msgs, context) -> {
