@@ -21,6 +21,7 @@
         <module>spring-cloud-gateway-nacos</module>
         <module>source-code</module>
         <module>rocketmq-demo</module>
+        <module>spring-cloud-rocketmq</module>
     </modules>
 
 

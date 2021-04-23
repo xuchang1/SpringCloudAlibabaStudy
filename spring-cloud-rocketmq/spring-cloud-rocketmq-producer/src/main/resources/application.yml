@@ -1,0 +1,20 @@
+server:
+  port: 8081
+spring:
+  cloud:
+    stream:
+      rocketmq:
+        binder:
+          name-server: localhost:9876
+        bindings:
+          output:
+            producer:
+              group: demo-group
+          orderOutPut:
+            producer:
+              group: order-group
+      bindings:
+        output:
+          destination: TopicTest
+        orderOutPut:
+          destination: TopicOrder
