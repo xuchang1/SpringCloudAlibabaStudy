@@ -28,4 +28,5 @@ public class ConsumerMain {
 	public void receive2(String receiveMsg) {
 		System.out.println("receive msg2 : " + receiveMsg);
 	}
+
 }

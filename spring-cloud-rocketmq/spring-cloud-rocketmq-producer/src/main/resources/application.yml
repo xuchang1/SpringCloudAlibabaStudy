@@ -10,6 +10,8 @@ spring:
           output:
             producer:
               group: demo-group
+              # 默认异步发送，改为同步(send方法本身并没有提供同步、异步功能，基于配置文件实现)
+              sync: true
           orderOutPut:
             producer:
               group: order-group

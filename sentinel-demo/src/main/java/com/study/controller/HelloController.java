@@ -21,7 +21,7 @@ public class HelloController {
 
 	//TODO 直接使用SentinelResource注解，为啥未生效
 	@GetMapping("getUserById")
-	@SentinelResource(value = "HelloWorld", blockHandler = "blockHandlerForUser")
+	@SentinelResource
 	public String getUserById(String id) {
 		System.out.println(111);
 		return id;

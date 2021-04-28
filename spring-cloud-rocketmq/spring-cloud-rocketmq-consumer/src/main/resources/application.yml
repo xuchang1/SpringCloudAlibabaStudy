@@ -6,6 +6,11 @@ spring:
       rocketmq:
         binder:
           name-server: localhost:9876
+        bings:
+          input:
+            consumer:
+              orderly:
+                true #默认是并发消费，此处改为同步消息(针对队列级别的)
       bindings:
         input:
           group: demo-group

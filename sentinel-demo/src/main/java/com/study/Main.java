@@ -20,6 +20,7 @@ public class Main {
     public static void main(String[] args) throws InterruptedException {
 	    initFlowRules();
 	    SpringApplication.run(Main.class, args);
+//	    doSomething();
 //        while (true) {
 //	        HelloService helloService = new HelloServiceImpl();
 //	        System.out.println(helloService.getUserById("xc"));
@@ -53,7 +54,7 @@ public class Main {
         List<FlowRule> result = new ArrayList<FlowRule>();
         FlowRule rule = new FlowRule();
         //需要保护的资源(可以理解为一个共享字符串)
-        rule.setResource("HelloWorld");
+        rule.setResource("getUserById");
         //限流阈值的类型，1QPS模式，0并发线程数模式
         rule.setGrade(RuleConstant.FLOW_GRADE_QPS);
         //限流阈值
