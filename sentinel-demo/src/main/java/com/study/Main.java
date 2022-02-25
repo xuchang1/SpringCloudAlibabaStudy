@@ -18,7 +18,7 @@ import java.util.List;
 @SpringBootApplication
 public class Main {
     public static void main(String[] args) throws InterruptedException {
-	    initFlowRules();
+	    initFlowRules2();
 	    SpringApplication.run(Main.class, args);
 //	    doSomething();
 //        while (true) {
@@ -51,10 +51,10 @@ public class Main {
     }
 
     private static void initFlowRules() {
-        List<FlowRule> result = new ArrayList<FlowRule>();
+        List<FlowRule> result = new ArrayList<>();
         FlowRule rule = new FlowRule();
         //需要保护的资源(可以理解为一个共享字符串)
-        rule.setResource("getUserById");
+        rule.setResource("hello");
         //限流阈值的类型，1QPS模式，0并发线程数模式
         rule.setGrade(RuleConstant.FLOW_GRADE_QPS);
         //限流阈值
@@ -62,4 +62,32 @@ public class Main {
         result.add(rule);
         FlowRuleManager.loadRules(result);
     }
+
+	private static void initFlowRules2() {
+		List<FlowRule> result = new ArrayList<>();
+
+		// 1、写操作限流策略
+		FlowRule writeRule = new FlowRule();
+		// 写资源
+		writeRule.setResource("write");
+		//限流阈值的类型，1QPS模式，0并发线程数模式
+		writeRule.setGrade(RuleConstant.FLOW_GRADE_QPS);
+		//限流阈值
+		writeRule.setCount(5);
+		result.add(writeRule);
+
+		// 2、读操作限流策略
+		FlowRule readRule = new FlowRule();
+		// 读资源
+		readRule.setResource("read");
+		//限流阈值的类型，1QPS模式，0并发线程数模式
+		readRule.setGrade(RuleConstant.FLOW_GRADE_QPS);
+		//限流阈值
+		readRule.setCount(2);
+		readRule.setStrategy(RuleConstant.STRATEGY_RELATE);
+		readRule.setRefResource("write");
+		result.add(readRule);
+
+		FlowRuleManager.loadRules(result);
+	}
 }

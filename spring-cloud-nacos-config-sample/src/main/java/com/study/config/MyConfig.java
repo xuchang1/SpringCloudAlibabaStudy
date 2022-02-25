@@ -19,7 +19,6 @@ import java.util.List;
  */
 @Component
 @Configuration
-@ConfigurationProperties(prefix = "a")
 public class MyConfig implements ApplicationContextAware {
 	public List<String> list = new ArrayList<>();
 

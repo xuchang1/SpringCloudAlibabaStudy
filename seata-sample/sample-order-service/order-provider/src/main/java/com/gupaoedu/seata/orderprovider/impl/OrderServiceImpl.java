@@ -30,7 +30,7 @@ public class OrderServiceImpl implements IOrderService{
     OrderMapper orderMapper;
     @Autowired
     OrderConvert orderConvert;
-    @Reference
+	@Reference(retries = 1, timeout = 2000)
     IAccountService accountService;
     @Override
     public ObjectResponse<OrderDto> createOrder(OrderDto orderDto) {

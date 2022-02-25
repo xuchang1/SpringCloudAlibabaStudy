@@ -1,6 +1,5 @@
 package com.study.service;
 
-import com.alibaba.csp.sentinel.annotation.SentinelResource;
 import org.springframework.stereotype.Service;
 
 /**

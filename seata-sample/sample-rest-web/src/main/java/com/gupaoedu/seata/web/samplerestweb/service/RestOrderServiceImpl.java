@@ -21,9 +21,9 @@ import org.springframework.stereotype.Service;
 @Slf4j
 @Service
 public class RestOrderServiceImpl implements IRestOrderService {
-    @Reference
+    @Reference(retries = 1, timeout = 2000)
     IRepoService repoService;
-    @Reference
+	@Reference(retries = 1, timeout = 2000)
     IOrderService orderService;
 
     @Override

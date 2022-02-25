@@ -1,6 +1,6 @@
 dubbo:
   registry:
-    address: nacos://192.168.216.128:8848
+    address: nacos://localhost:8848
   scan:
       base-packages: com.gupaoedu.seata.web.samplerestweb.controller
 spring:
@@ -55,8 +55,8 @@ seata:
     support:
       spring:
         datasource-autoproxy: false
-  registry:
-    type: nacos
-    nacos:
-      cluster: default
-      server-addr: 192.168.216.128:8848
+#  registry:
+#    type: nacos
+#    nacos:
+#      cluster: default
+#      server-addr: 192.168.216.128:8848

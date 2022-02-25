@@ -1,9 +1,9 @@
 spring:
   datasource:
     username: root
-    password: root
+    password: 111111
     url: jdbc:mysql://localhost:3306/seata_repo?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC
-    driver-class-name: com.mysql.jdbc.Driver
+    driver-class-name: com.mysql.cj.jdbc.Driver
   application:
     name: sample-repo-service
 mybatis:
@@ -13,7 +13,7 @@ dubbo:
   application:
     name: sample-repo-service
   registry:
-    address: nacos://192.168.216.128:8848
+    address: nacos://localhost:8848
   protocol:
     name: dubbo
     port: 20881
@@ -68,8 +68,8 @@ seata:
     support:
       spring:
         datasource-autoproxy: true
-  registry:
-    type: nacos
-    nacos:
-      cluster: default
-      server-addr: 192.168.216.128:8848
+#  registry:
+#    type: nacos
+#    nacos:
+#      cluster: default
+#      server-addr: 192.168.216.128:8848
