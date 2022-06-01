@@ -1,7 +1,7 @@
 spring:
   datasource:
     username: root
-    password: 111111
+    password: 123456
     url: jdbc:mysql://localhost:3306/seata_account?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC
     driver-class-name: com.mysql.cj.jdbc.Driver
   application:
@@ -42,7 +42,7 @@ seata:
     serialization: seata
     compressor: none
   service:
-    vgroup-mapping: default
+    vgroup-mapping: SEATA_GROUP
 #      sample-account-service: default
     enable-degrade: false
     disable-global-transaction: false
