@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>spring-cloud-dubbo-sample-provider</artifactId>
+    <artifactId>spring-cloud-dubbo-sample-provider2</artifactId>
 
     <dependencies>
         <dependency>
